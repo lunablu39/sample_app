@@ -9,8 +9,8 @@ class ListsController < ApplicationController
       redirect_to list_path(list.id)
     else
       render :new
+    end
   end
-end
 
   def index
     @lists = List.all
@@ -29,7 +29,7 @@ end
     list.update(list_params)
     redirect_to list_path(list.id)
   end
-  
+
   def destroy
     list = List.find(params[:id])
     list.destroy
